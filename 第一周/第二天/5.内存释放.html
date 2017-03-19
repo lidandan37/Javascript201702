@@ -107,14 +107,14 @@
 
 //    给元素绑定事件的时候 也会涉及到 栈内存不销毁
 
-//    function fn() {
-//        var count = 0;
-//        function f() {
-//            console.log(++count);
-//        }
-//        btn.onclick = f;
-//    }
-//    fn();
+    function fn() {
+        var count = 0;
+        function f() {
+            console.log(++count);
+        }
+        btn.onclick = f;
+    }
+    fn();
 
 //    (function () {
 //        var btn = document.getElementById('btn');
@@ -124,12 +124,14 @@
 //        }
 //    })();
 
+/*
 
         var btn = document.getElementById('btn');
          var count = 0;
         btn.onclick = function () {
             console.log(++count);
         };
+*/
 
 
 //    function far() {
@@ -147,6 +149,11 @@
 //    far()(); // 1
 //    far()(); // 1
 
+    var fn=13;
+    function fn(){
+        console.log('ok')
+    }
+    console.log(fn());
 </script>
 </body>
 </html>
