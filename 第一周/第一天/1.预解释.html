@@ -25,22 +25,23 @@
 //      console.log(num); // undefined
       var num = 123;
 //      console.log(num); // 123
-//      console.log(obj);
+//      console.log(obj);  // undefined
     var obj = {name:'zhufeng'};
-//      console.log(obj);
-//    console.log(fn); //
+//      console.log(obj);   //Object{name:zhufeng}
+//    console.log(fn); //  报错
 
 //    全局变量和私有变量
 //    全局变量 就是 在全局作用域中声明的变量
 //    私有变量 就是 在私有作用域中声明的变量
 
-//   预解释是针对于当前作用域 只发生在当前作用域中 首先开始对window进行预解释 函数执行的时候会形成一个私有作用域 然后 函数执行的时候也会进行 预解释
+//   预解释是针对于当前作用域 只发生在当前作用域中 首先开始对window进行预解释
+    // 函数执行的时候会形成一个私有作用域 然后 函数执行的时候也会进行 预解释
    function fn(a,b){
         console.log(name1); // undefined
         console.log(a,b);  // 33, 66 是一个变量 在私有中声明过
         var name1 = 'nihao';
         console.log(name1); // 'nihao'
-//        console.log('function');
+//        console.log('function');//function
     }
     fn(33,66);
 //    var a,b;
@@ -48,9 +49,9 @@
     console.log(name1);
 //    全局变量和私有变量
 //    全局作用域中声明的变量
-//    在私有作用域中声明的变量（形参和预解释的声明的变量）
+//    在私有作用域中声明的变量（形参和预解释中声明的变量）
 //    console.log(fn);
-//    console.log(name1); // 报错
+//    console.log(name1); // 报错 全局中没有这个变量
 //    函数执行  将函数里的js代码加载运行 也需要一个供函数里js代码执行的环境 -> 私有作用域
     //  1.给形参赋值
     //  2.进行预解释
@@ -59,12 +60,12 @@
 
     function fn1(){
         var name1 = 'nihao';
-        console.log('function');
+        console.log('function');//function
     }
     fn1();
-//    console.log(name1);
-//   console.log(fn);
-//     fn();
+//    console.log(name1); 报错 全局中没有这个变量 报错之后下面的代码不再执行
+//   console.log(fn1);
+//     fn1();
 
 
     console.log(num2);
